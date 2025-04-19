@@ -1,11 +1,12 @@
-//
-// Server.h
-// c-server
-//
-// Created by Samandar Komil on 13/04/2025.
-// 
-// Reference: Eric Meehan's C library - https://github.com/ericomeehan/libeom
-//
+/**
+ * @file    Server.h
+ * @author  Samandar Komil
+ * @date    13 April 2025
+ * @brief   Defines the Server struct and constructor for TCP server behavior.
+ * 
+ * @details Inspired by Eric Meehan's C library:
+ *          https://github.com/ericomeehan/libeom
+ */
 
 
 #ifndef Server_h

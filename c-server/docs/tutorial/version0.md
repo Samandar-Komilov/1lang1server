@@ -1,4 +1,4 @@
-# Chapter 1: Basic TCP Server
+# 0️⃣ Version 0: Basic TCP Server
 
 In this chapter, we'll start building bare bones of our web server. We'll define our fundamental `Server` struct with dedicated constructor function `server_constructor`. 
 The reason why we are writing a constructor is, C is not an Object-Oriented Language. So we have to use **structs** with **function pointers** to imitate that behaviour.

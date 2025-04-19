@@ -1,17 +1,12 @@
-//
-// =========
-// 1lang1server/c-server
-//
-// A repository to practice pretty much every language I learn by building a web server.
-// =========
-// 
-//
-// Created by Samandar Komil on 13/04/2025.
-// 
-// Reference: Eric Meehan's C library - https://github.com/ericomeehan/libeom
-//
-// 
-// Server.c
+/**
+ * @file    Server.c
+ * @author  Samandar Komil
+ * @date    13 April 2025
+ * @brief   Implements TCP server setup and launch routine.
+ * 
+ * @details Inspired by Eric Meehan's C library:
+ *          https://github.com/ericomeehan/libeom
+ */
 
 
 #include "Server.h"
@@ -36,7 +31,7 @@ void launch(Server *self){
         exit(1);
     }
 
-    printf("===== Waiting for connections on port %d =====\n", self->port);
+    printf("\033[32m===== Waiting for connections on port %d =====\033[0m\n", self->port);
 
     while (1){
         char buffer[MAX_BUFFER_SIZE];

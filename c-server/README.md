@@ -33,7 +33,9 @@ Implement `http_request_parser` to read the request from a client socket, tokeni
 Create an `HTTPResponse` struct for responses.
 
 **Best Practices**  
-Allocate memory dynamically for `HTTPRequest` fields (e.g., method, headers) and free them with `http_request_free` to prevent leaks. Test with curl http://localhost:8080 to verify the response. Use Valgrind to check for memory leaks in `http_request_parse`.
+- Allocate memory dynamically for `HTTPRequest` fields and free them with `http_request_free` to prevent leaks. 
+- Test with curl http://localhost:8080 to verify the response. 
+- Use Valgrind to check for memory leaks in `http_request_parse`.
 
 
 ### 2️⃣ Static File Serving
