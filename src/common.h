@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include <string.h>
 #include <unistd.h>
 #include <fcntl.h>
@@ -45,12 +46,21 @@
 
 typedef enum
 {
-    PARSE_REQUEST_LINE,
-    PARSE_HEADERS,
-    PARSE_BODY,
-    PARSE_DONE,
-    PARSE_ERROR
-} ParseState;
+    CONN_ESTABLISHED,
+    CONN_PROCESSING,
+    CONN_SENDING_RESPONSE,
+    CONN_CLOSING,
+    CONN_ERROR
+} ConnectionState;
+
+typedef enum
+{
+    REQ_PARSE_LINE,
+    REQ_PARSE_HEADER,
+    REQ_PARSE_BODY,
+    REQ_PARSE_DONE,
+    REQ_HANDLE_ERROR,
+} HTTPRequestState;
 
 typedef enum
 {

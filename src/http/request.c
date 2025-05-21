@@ -25,15 +25,13 @@ HTTPRequest *create_http_request(void)
     req->body     = NULL;
     req->body_len = 0;
 
+    req->state = REQ_PARSE_LINE;
+
     return req;
 }
 
 void free_http_request(HTTPRequest *req)
 {
-    free(req->request_line.method);
-    free(req->request_line.uri);
-    free(req->request_line.protocol);
     free(req->headers);
-    free(req->body);
     free(req);
 }

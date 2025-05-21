@@ -16,13 +16,15 @@
 
 typedef struct Connection
 {
-    int socket;          // client socket
-    char *buffer;        // dynamic buffer for request
-    size_t buffer_size;  // allocated size for buffer
-    size_t len;          // current data length of buffer
-    size_t parsed_bytes; // bytes parsed
-    ParseState state;    // parsing state
-    HTTPRequest request; // parsed request
+    int socket;                // client socket
+    char *buffer;              // dynamic buffer for request
+    size_t buffer_size;        // allocated size for buffer
+    size_t buffer_len;         // current data length of buffer
+    ConnectionState state;     // connection state
+    time_t last_active;        // last active time
+    HTTPRequest *curr_request; // current request
+    int requests_handled;      // number of requests handled so far
+    bool keep_alive;           // keep-alive?
 } Connection;
 
 int init_connection(Connection *conn, int client_fd, int epoll_fd);

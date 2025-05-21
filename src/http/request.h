@@ -36,6 +36,7 @@ typedef struct HTTPRequest
     int header_count;
     char *body;
     size_t body_len;
+    HTTPRequestState state;
 } HTTPRequest;
 
 HTTPRequest *create_http_request();
